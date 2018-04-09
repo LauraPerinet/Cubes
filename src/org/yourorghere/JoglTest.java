@@ -21,6 +21,7 @@ import javax.media.opengl.glu.GLU;
 public class JoglTest implements GLEventListener {
     int angle=0;
     Cube cube;
+    Cube moyenCube;
     public static void main(String[] args) {
         Frame frame = new Frame("Simple JOGL Application");
         GLCanvas canvas = new GLCanvas();
@@ -62,6 +63,7 @@ public class JoglTest implements GLEventListener {
         gl.setSwapInterval(1);
 
         cube=new Cube();
+        moyenCube=new Cube();
         // Setup the drawing area and shading mode
         gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         gl.glShadeModel(GL.GL_SMOOTH); // try setting this to GL_FLAT and see what happens.
@@ -93,8 +95,16 @@ public class JoglTest implements GLEventListener {
         gl.glClear(GL.GL_COLOR_BUFFER_BIT | GL.GL_DEPTH_BUFFER_BIT);
         gl.glLoadIdentity();
 
-        gl.glTranslated(0f, 0f, -10f);
+        gl.glTranslatef(0f, 0f, -10f);
         
+        cube.display(drawable);
+        
+        gl.glTranslatef(-1f, 0f, -5f);
+        gl.glScalef(0.5f,.5f,0.5f);
+        cube.display(drawable);
+        
+        gl.glTranslatef(-1f, 0f, -5f);
+        gl.glScalef(0.5f,.5f,0.5f);
         cube.display(drawable);
         
 

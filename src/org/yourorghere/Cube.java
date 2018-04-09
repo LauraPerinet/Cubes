@@ -19,7 +19,7 @@ public class Cube {
     public void display(GLAutoDrawable drawable){
     
         GL gl=drawable.getGL();
-        gl.glRotatef(10f+angle, 30f, 30f, 30f);
+        gl.glRotatef(10f+angle, 5f, 5f, 0f);
         
         
         gl.glBegin(GL.GL_QUADS);
