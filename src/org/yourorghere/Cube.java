@@ -14,12 +14,13 @@ import javax.media.opengl.GLAutoDrawable;
  */
 public class Cube {
     int angle=0;
+    float x=5,y=5;
     public Cube() {
     }
     public void display(GLAutoDrawable drawable){
     
         GL gl=drawable.getGL();
-        gl.glRotatef(10f+angle, 5f, 5f, 0f);
+        gl.glRotatef(10f+angle, x, y, 0f);
         
         
         gl.glBegin(GL.GL_QUADS);
@@ -69,5 +70,6 @@ public class Cube {
         
         angle++;
     }
+    public void setRotation(float x, float y){ this.x=x; this.y=y;}
     
 }
